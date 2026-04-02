@@ -1,0 +1,2600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meridian Media — Travel Marketing Agency</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --gold: #b8924a;
+  --gold-light: #c9a96e;
+  --gold-pale: #f7f1e8;
+  --gold-border: rgba(184,146,74,0.2);
+  --navy: #0f1623;
+  --navy-mid: #1e2d45;
+  --text: #1a1a2e;
+  --body: #4a4a5e;
+  --muted: #8a8a9a;
+  --bg: #fafaf8;
+  --white: #ffffff;
+  --border: #e8e6e0;
+  --surface: #f5f3ee;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(250,250,248,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 48px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav-logo-icon { width: 28px; height: 28px; }
+
+.nav-logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--text);
+}
+.nav-logo-text span { color: var(--gold); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: var(--body);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--gold); }
+
+.nav-cta {
+  background: var(--navy);
+  color: var(--white) !important;
+  padding: 10px 22px;
+  border-radius: 3px;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase;
+  transition: background 0.2s !important;
+}
+.nav-cta:hover { background: var(--gold) !important; color: var(--white) !important; }
+
+/* ── PAGE SECTIONS ── */
+.page { display: none; padding-top: 72px; min-height: 100vh; }
+.page.active { display: block; }
+
+/* ── HERO ── */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100vh - 72px);
+  align-items: center;
+}
+
+.hero-left {
+  padding: 80px 64px 80px 80px;
+  position: relative;
+}
+
+.hero-left::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 15%; bottom: 15%;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, var(--border), transparent);
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.hero-eyebrow-line {
+  width: 28px; height: 1px;
+  background: var(--gold);
+}
+
+.hero-eyebrow-text {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(42px, 4.5vw, 64px);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 24px;
+  letter-spacing: -0.5px;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.hero-sub {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--body);
+  line-height: 1.8;
+  margin-bottom: 40px;
+  max-width: 440px;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--navy);
+  color: var(--white);
+  padding: 15px 30px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 1px solid var(--navy);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn-primary:hover { background: var(--gold); border-color: var(--gold); }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  padding: 15px 30px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--muted);
+  letter-spacing: 0.3px;
+}
+
+.hero-right {
+  background: var(--surface);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 64px 60px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-right::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(184,146,74,0.08), transparent 70%);
+}
+
+.hero-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 36px;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.06);
+  position: relative;
+  z-index: 1;
+}
+
+.hero-card-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--gold-pale);
+  border: 1px solid var(--gold-border);
+  border-radius: 100px;
+  padding: 5px 12px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.pulse {
+  width: 6px; height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity:1; transform:scale(1); }
+  50% { opacity:0.4; transform:scale(0.6); }
+}
+
+.hero-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.hero-card p {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--body);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.flow-mini {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.flow-mini-step {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.flow-mini-step:last-child { border-bottom: none; }
+
+.flow-mini-num {
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--white);
+  font-size: 10px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.flow-mini-text {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--body);
+  line-height: 1.5;
+}
+
+.flow-mini-text strong {
+  font-weight: 500;
+  color: var(--text);
+  display: block;
+  margin-bottom: 1px;
+}
+
+.hero-card-result {
+  margin-top: 20px;
+  background: var(--gold-pale);
+  border: 1px solid var(--gold-border);
+  border-radius: 6px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.result-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.result-text {
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--body);
+  line-height: 1.5;
+}
+
+/* ── SECTION STYLES ── */
+section { padding: 100px 80px; }
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.section-tag-line { width: 24px; height: 1px; background: var(--gold); }
+.section-tag-text {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold);
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 3vw, 44px);
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+.section-title em { font-style: italic; color: var(--gold); }
+
+.section-sub {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--body);
+  line-height: 1.8;
+  max-width: 540px;
+  margin-bottom: 56px;
+}
+
+/* ── SOCIAL PROOF STRIP ── */
+.proof-strip {
+  background: var(--navy);
+  padding: 32px 80px;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  overflow: hidden;
+}
+
+.proof-label {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.proof-divider {
+  width: 1px; height: 24px;
+  background: rgba(255,255,255,0.1);
+  flex-shrink: 0;
+}
+
+.proof-stat {
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.proof-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  color: var(--gold-light);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.proof-stat-label {
+  font-size: 10px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.5px;
+}
+
+/* ── HOW IT WORKS ── */
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.how-step {
+  background: var(--white);
+  padding: 40px 32px;
+  position: relative;
+  transition: background 0.2s;
+}
+.how-step:hover { background: var(--surface); }
+
+.how-step-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  color: var(--border);
+  line-height: 1;
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+
+.how-step h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.how-step p {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--body);
+  line-height: 1.7;
+}
+
+.how-step-accent {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ── WHY US ── */
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.why-points {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.why-point {
+  display: flex;
+  gap: 20px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.why-point:hover {
+  border-color: var(--gold-border);
+  box-shadow: 0 4px 20px rgba(184,146,74,0.06);
+}
+
+.why-icon {
+  width: 40px; height: 40px;
+  background: var(--gold-pale);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 18px;
+}
+
+.why-point h4 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.why-point p {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--body);
+  line-height: 1.7;
+}
+
+.why-visual {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 48px;
+  text-align: center;
+}
+
+.why-big-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 96px;
+  font-weight: 400;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.why-big-label {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--body);
+  line-height: 1.7;
+  max-width: 240px;
+  margin: 0 auto 32px;
+}
+
+/* ── PACKAGES PREVIEW ── */
+.pkg-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.pkg-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.pkg-card:hover {
+  box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+  border-color: var(--gold-border);
+}
+
+.pkg-card.featured {
+  border-color: var(--gold);
+  position: relative;
+}
+
+.pkg-card-top {
+  background: var(--navy);
+  padding: 32px 28px 28px;
+}
+.pkg-card.featured .pkg-card-top { background: var(--gold); }
+
+.pkg-card-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  border-radius: 100px;
+  padding: 4px 12px;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 12px;
+}
+
+.pkg-card-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.pkg-card-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1;
+}
+
+.pkg-card-price sup {
+  font-size: 18px;
+  vertical-align: top;
+  margin-top: 8px;
+  display: inline-block;
+}
+
+.pkg-card-period {
+  font-size: 11px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+  margin-top: 4px;
+}
+
+.pkg-card-body {
+  background: var(--white);
+  padding: 28px;
+}
+
+.pkg-card-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.pkg-card-features li {
+  display: flex;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--body);
+  line-height: 1.4;
+  align-items: flex-start;
+}
+
+.pkg-card-features li::before {
+  content: '✓';
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 500;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.pkg-cta {
+  display: block;
+  text-align: center;
+  padding: 13px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid var(--navy);
+  color: var(--navy);
+  background: transparent;
+}
+.pkg-cta:hover { background: var(--navy); color: var(--white); }
+
+.pkg-cta.featured-cta {
+  background: var(--gold);
+  color: var(--white);
+  border-color: var(--gold);
+}
+.pkg-cta.featured-cta:hover { background: var(--navy); border-color: var(--navy); }
+
+/* ── GUARANTEE ── */
+.guarantee-bar {
+  background: var(--gold-pale);
+  border: 1px solid var(--gold-border);
+  border-radius: 8px;
+  padding: 48px 56px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-top: 56px;
+}
+
+.guarantee-icon {
+  font-size: 36px;
+  flex-shrink: 0;
+}
+
+.guarantee-bar h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.guarantee-bar p {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--body);
+  line-height: 1.8;
+}
+
+.guarantee-bar strong { color: var(--gold); font-weight: 500; }
+
+/* ── ABOUT PAGE ── */
+.about-hero {
+  background: var(--navy);
+  padding: 100px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 4vw, 54px);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.about-hero h1 em { font-style: italic; color: var(--gold-light); }
+
+.about-hero p {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.85;
+}
+
+.about-hero-tag {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 20px;
+}
+
+.about-hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-stat-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 24px 28px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.about-stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  color: var(--gold-light);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.about-stat-label {
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.6;
+}
+
+.team-section { padding: 100px 80px; }
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 56px;
+}
+
+.team-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+.team-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); }
+
+.team-card-top {
+  background: var(--surface);
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-avatar {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: var(--gold-light);
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+}
+
+.team-card-body {
+  padding: 24px 28px;
+  background: var(--white);
+}
+
+.team-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.team-role {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.team-bio {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--body);
+  line-height: 1.7;
+}
+
+.mission-section {
+  background: var(--surface);
+  padding: 80px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
+.mission-section blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(22px, 2.5vw, 32px);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.5;
+  max-width: 720px;
+  margin: 0 auto 20px;
+}
+
+.mission-source {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+/* ── PACKAGES PAGE ── */
+.packages-hero {
+  background: var(--navy);
+  padding: 80px 80px 100px;
+  text-align: center;
+}
+
+.packages-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 16px;
+  line-height: 1.15;
+}
+
+.packages-hero h1 em { font-style: italic; color: var(--gold-light); }
+
+.packages-hero p {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.55);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.packages-hero-tag {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 20px;
+}
+
+.packages-full { padding: 80px; }
+
+.packages-full-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.pkg-full {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+.pkg-full:hover { box-shadow: 0 8px 40px rgba(0,0,0,0.08); }
+.pkg-full.featured { border-color: var(--gold); }
+
+.pkg-full-header {
+  background: var(--navy);
+  padding: 36px 32px;
+}
+.pkg-full.featured .pkg-full-header { background: var(--gold); }
+
+.pkg-full-num {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 8px;
+}
+
+.pkg-full-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: var(--white);
+  margin-bottom: 6px;
+  font-weight: 400;
+}
+
+.pkg-full-sub {
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  min-height: 40px;
+}
+
+.pkg-full-price {
+  display: flex;
+  align-items: flex-start;
+  gap: 3px;
+}
+
+.pkg-full-sym {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: rgba(255,255,255,0.7);
+  margin-top: 8px;
+}
+
+.pkg-full-num-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 46px;
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1;
+}
+
+.pkg-full-period {
+  font-size: 10px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  margin-top: 6px;
+}
+
+.pkg-full-adspend {
+  font-size: 10px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.4);
+  font-style: italic;
+  margin-top: 4px;
+}
+
+.pkg-full-body { padding: 32px; background: var(--white); }
+
+.pkg-section-label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 20px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.pkg-section-label:first-child { margin-top: 0; }
+
+.pkg-full-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.pkg-full-features li {
+  display: flex;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--body);
+  line-height: 1.5;
+  align-items: flex-start;
+}
+
+.pkg-full-features li::before {
+  content: '—';
+  color: var(--gold);
+  font-size: 10px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.ai-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: var(--gold-pale);
+  border: 1px solid var(--gold-border);
+  border-radius: 3px;
+  padding: 1px 6px;
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+/* ── ADDONS ── */
+.addons-section { padding: 0 80px 80px; }
+
+.addons-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.addon-card {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 20px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--white);
+  transition: border-color 0.2s;
+}
+.addon-card:hover { border-color: var(--gold-border); }
+
+.addon-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+
+.addon-desc {
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.addon-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: var(--gold);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── CASE STUDIES ── */
+.cases-hero {
+  background: var(--navy);
+  padding: 80px;
+  text-align: center;
+}
+
+.cases-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(34px, 4vw, 52px);
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.cases-hero h1 em { font-style: italic; color: var(--gold-light); }
+
+.cases-hero p {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.cases-tag {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 16px;
+}
+
+.cases-section { padding: 80px; }
+
+.case-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 32px;
+  transition: box-shadow 0.2s;
+  background: var(--white);
+}
+.case-card:hover { box-shadow: 0 8px 40px rgba(0,0,0,0.08); }
+
+.case-card-inner {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.case-card-left {
+  background: var(--surface);
+  padding: 48px 40px;
+  border-right: 1px solid var(--border);
+}
+
+.case-niche {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.case-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.case-desc {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--body);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.case-pkg-tag {
+  display: inline-block;
+  background: var(--navy);
+  color: var(--white);
+  padding: 5px 12px;
+  border-radius: 100px;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.case-card-right {
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.case-results {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.case-result-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 400;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.case-result-label {
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.case-testimonial {
+  background: var(--gold-pale);
+  border-left: 3px solid var(--gold);
+  padding: 20px 24px;
+  border-radius: 0 6px 6px 0;
+}
+
+.case-testimonial p {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.case-testimonial-author {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: 0.5px;
+}
+
+.coming-soon-banner {
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  padding: 60px;
+  text-align: center;
+}
+
+.coming-soon-banner h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.coming-soon-banner p {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+/* ── BLOG ── */
+.blog-section { padding: 80px; }
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 56px;
+}
+
+.blog-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--white);
+  transition: box-shadow 0.2s;
+  cursor: pointer;
+}
+.blog-card:hover { box-shadow: 0 6px 32px rgba(0,0,0,0.08); }
+
+.blog-card-img {
+  height: 180px;
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.blog-card-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(15,22,35,0.1));
+}
+
+.blog-card-body { padding: 24px 24px 28px; }
+
+.blog-cat {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.blog-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+.blog-excerpt {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--body);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.blog-meta {
+  font-size: 10px;
+  font-weight: 300;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.blog-meta-dot {
+  width: 3px; height: 3px;
+  background: var(--border);
+  border-radius: 50%;
+}
+
+/* ── CONTACT ── */
+.contact-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100vh - 72px);
+}
+
+.contact-left {
+  background: var(--navy);
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-left h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(34px, 3.5vw, 50px);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.contact-left h1 em { font-style: italic; color: var(--gold-light); }
+
+.contact-left p {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.85;
+  margin-bottom: 48px;
+  max-width: 380px;
+}
+
+.contact-detail {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.contact-detail-icon {
+  width: 36px; height: 36px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.contact-detail-label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 3px;
+}
+
+.contact-detail-value {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.7);
+}
+
+.contact-right {
+  background: var(--bg);
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-right h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.contact-right p {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--body);
+  margin-bottom: 36px;
+  line-height: 1.7;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text);
+  background: var(--white);
+  transition: border-color 0.2s;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--gold);
+}
+
+.form-group textarea { resize: vertical; min-height: 100px; }
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-submit {
+  width: 100%;
+  background: var(--navy);
+  color: var(--white);
+  padding: 16px;
+  border: none;
+  border-radius: 4px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 4px;
+}
+.form-submit:hover { background: var(--gold); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy);
+  padding: 60px 80px 32px;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-brand-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+.footer-brand-name span { color: var(--gold-light); }
+
+.footer-brand-desc {
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.8;
+  max-width: 240px;
+}
+
+.footer-col h4 {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 16px;
+}
+
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 10px; }
+
+.footer-col a {
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+.footer-col a:hover { color: var(--gold-light); }
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-copy {
+  font-size: 11px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.25);
+}
+
+.footer-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.25);
+}
+
+/* ── SHARED UTILITY ── */
+.text-center { text-align: center; }
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--white);
+  padding: 15px 32px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-block;
+  text-decoration: none;
+}
+.btn-gold:hover { background: var(--navy); }
+
+@media (max-width: 1024px) {
+  section { padding: 80px 40px; }
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .hero-left { padding: 60px 40px; }
+  .how-grid { grid-template-columns: 1fr 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .pkg-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+  .team-grid { grid-template-columns: 1fr 1fr; }
+  .packages-full-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto 48px; }
+  .addons-section { padding: 0 40px 80px; }
+  .addons-grid { grid-template-columns: 1fr 1fr; }
+  .about-hero { grid-template-columns: 1fr; padding: 60px 40px; }
+  .contact-page { grid-template-columns: 1fr; }
+  .contact-left { padding: 60px 40px; }
+  .contact-right { padding: 60px 40px; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .blog-grid { grid-template-columns: 1fr 1fr; }
+  .case-card-inner { grid-template-columns: 1fr; }
+  .packages-full { padding: 60px 40px; }
+  .proof-strip { padding: 32px 40px; gap: 32px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a class="nav-logo" onclick="showPage('home')">
+    <svg class="nav-logo-icon" viewBox="0 0 72 72" fill="none">
+      <circle cx="36" cy="36" r="28" stroke="#b8924a" stroke-width="1" opacity="0.4"/>
+      <ellipse cx="36" cy="36" rx="12" ry="28" stroke="#b8924a" stroke-width="1" opacity="0.7"/>
+      <line x1="8" y1="36" x2="64" y2="36" stroke="#b8924a" stroke-width="1" opacity="0.4"/>
+      <path d="M 16 52 Q 28 10 58 20" stroke="#b8924a" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <circle cx="16" cy="52" r="2.5" fill="#b8924a"/>
+      <circle cx="58" cy="20" r="2.5" fill="#b8924a"/>
+      <path d="M 54 16 L 58 20 L 54 23" stroke="#b8924a" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="nav-logo-text">Meridi<span>a</span>n</div>
+  </a>
+  <ul class="nav-links">
+    <li><a onclick="showPage('home')" style="cursor:pointer">Home</a></li>
+    <li><a onclick="showPage('about')" style="cursor:pointer">About</a></li>
+    <li><a onclick="showPage('packages')" style="cursor:pointer">Packages</a></li>
+    <li><a onclick="showPage('cases')" style="cursor:pointer">Case Studies</a></li>
+    <li><a onclick="showPage('blog')" style="cursor:pointer">Blog</a></li>
+    <li><a onclick="showPage('contact')" style="cursor:pointer">Contact</a></li>
+    <li><a class="nav-cta" onclick="showPage('contact')" style="cursor:pointer">Book a Call</a></li>
+  </ul>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- HOME PAGE -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div id="page-home" class="page active">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-line"></div>
+        <div class="hero-eyebrow-text">Travel Marketing Agency — Manchester</div>
+      </div>
+      <h1>More bookings.<br>Less <em>chasing leads.</em></h1>
+      <p class="hero-sub">Meridian Media combines performance advertising with AI voice agents that call every lead in under 5 seconds — so UK travel agencies never miss an enquiry again.</p>
+      <div class="hero-btns">
+        <a class="btn-primary" onclick="showPage('contact')" style="cursor:pointer">Book a Discovery Call</a>
+        <a class="btn-secondary" onclick="showPage('packages')" style="cursor:pointer">View Packages</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">21×</div>
+          <div class="stat-label">higher conversion with<br>instant lead response</div>
+        </div>
+        <div>
+          <div class="stat-num">48%</div>
+          <div class="stat-label">of travel enquiries<br>go unanswered</div>
+        </div>
+        <div>
+          <div class="stat-num">5s</div>
+          <div class="stat-label">our AI calls every<br>lead within</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-card">
+        <div class="hero-card-tag"><span class="pulse"></span> AI Voice Agent — Live</div>
+        <h3>How a lead becomes a booking</h3>
+        <p>From Facebook ad to confirmed consultation — fully automated.</p>
+        <div class="flow-mini">
+          <div class="flow-mini-step">
+            <div class="flow-mini-num">1</div>
+            <div class="flow-mini-text">
+              <strong>Lead sees your Facebook ad</strong>
+              Fills in enquiry form — even at 11pm on a Sunday
+            </div>
+          </div>
+          <div class="flow-mini-step">
+            <div class="flow-mini-num">2</div>
+            <div class="flow-mini-text">
+              <strong>AI calls within 5 seconds</strong>
+              Qualifies destination, budget & travel dates
+            </div>
+          </div>
+          <div class="flow-mini-step">
+            <div class="flow-mini-num">3</div>
+            <div class="flow-mini-text">
+              <strong>Booked into your diary</strong>
+              Hot leads scheduled, cold leads nurtured via email
+            </div>
+          </div>
+          <div class="flow-mini-step">
+            <div class="flow-mini-num">4</div>
+            <div class="flow-mini-text">
+              <strong>You close the booking</strong>
+              Full call transcript & lead score in your CRM
+            </div>
+          </div>
+        </div>
+        <div class="hero-card-result">
+          <div class="result-num">21×</div>
+          <div class="result-text">higher conversion rate vs responding hours later</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Proof Strip -->
+  <div class="proof-strip">
+    <div class="proof-label">By the numbers</div>
+    <div class="proof-divider"></div>
+    <div class="proof-stat">
+      <div class="proof-stat-num">128k</div>
+      <div class="proof-stat-label">UK travel businesses</div>
+    </div>
+    <div class="proof-divider"></div>
+    <div class="proof-stat">
+      <div class="proof-stat-num">£190bn</div>
+      <div class="proof-stat-label">UK travel market 2026</div>
+    </div>
+    <div class="proof-divider"></div>
+    <div class="proof-stat">
+      <div class="proof-stat-num">&lt;1%</div>
+      <div class="proof-stat-label">using AI voice agents</div>
+    </div>
+    <div class="proof-divider"></div>
+    <div class="proof-stat">
+      <div class="proof-stat-num">64%</div>
+      <div class="proof-stat-label">travel brands increasing budgets in 2026</div>
+    </div>
+  </div>
+
+  <!-- How it works -->
+  <section>
+    <div class="section-tag">
+      <div class="section-tag-line"></div>
+      <div class="section-tag-text">How It Works</div>
+    </div>
+    <h2 class="section-title">Your full marketing<br><em>engine, built for travel</em></h2>
+    <p class="section-sub">We handle everything from getting your ads in front of the right people to ensuring every lead is contacted instantly and nurtured into a booking.</p>
+
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="how-step-num">01</div>
+        <h4>Paid Social Ads</h4>
+        <p>We build and run Facebook & Instagram campaigns targeting the right travellers for your agency — cold audiences, warm retargeting and lookalike campaigns.</p>
+        <span class="how-step-accent">Ads that convert →</span>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">02</div>
+        <h4>AI Voice Agent</h4>
+        <p>Every enquiry triggers an instant AI call within 5 seconds. The agent qualifies the lead, answers questions and books consultations directly into your diary.</p>
+        <span class="how-step-accent">Never miss a lead →</span>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">03</div>
+        <h4>Email & Automation</h4>
+        <p>Cold leads enter intelligent email sequences tailored to their destination interest. Every touchpoint is designed to bring them back when they're ready to book.</p>
+        <span class="how-step-accent">Nurture on autopilot →</span>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">04</div>
+        <h4>CRM & Reporting</h4>
+        <p>Every lead, call transcript and booking is tracked in your CRM. Weekly reports show exactly what's working — cost per lead, conversion rate and pipeline value.</p>
+        <span class="how-step-accent">Full visibility →</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us -->
+  <section style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="why-grid">
+      <div>
+        <div class="section-tag">
+          <div class="section-tag-line"></div>
+          <div class="section-tag-text">Why Meridian</div>
+        </div>
+        <h2 class="section-title">We've been on<br><em>your side of the desk</em></h2>
+        <p class="section-sub">Our founding team has run travel agencies, closed millions in sales, and built marketing systems from scratch. We don't just understand your industry — we've lived it.</p>
+        <div class="why-points">
+          <div class="why-point">
+            <div class="why-icon">✈️</div>
+            <div>
+              <h4>Travel Industry DNA</h4>
+              <p>Our co-founder ran a travel agency turning over millions. We know your margins, your seasonality, and exactly what makes a traveller convert.</p>
+            </div>
+          </div>
+          <div class="why-point">
+            <div class="why-icon">🤖</div>
+            <div>
+              <h4>AI-First Agency</h4>
+              <p>While other agencies are still manually following up on leads, ours are called within 5 seconds by AI — 24 hours a day, 7 days a week.</p>
+            </div>
+          </div>
+          <div class="why-point">
+            <div class="why-icon">📊</div>
+            <div>
+              <h4>Performance Guaranteed</h4>
+              <p>We put our money where our mouth is. 20 qualified leads in 60 days — or we work for free until we deliver.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="why-visual">
+        <div class="why-big-num">48%</div>
+        <div class="why-big-label">of UK travel enquiries go completely unanswered. We fix that — permanently.</div>
+        <a class="btn-primary" onclick="showPage('contact')" style="cursor:pointer">Get Started Today</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Packages Preview -->
+  <section>
+    <div style="text-align:center; margin-bottom: 56px;">
+      <div class="section-tag" style="justify-content:center;">
+        <div class="section-tag-line"></div>
+        <div class="section-tag-text">Our Packages</div>
+        <div class="section-tag-line"></div>
+      </div>
+      <h2 class="section-title">Choose your <em>growth plan</em></h2>
+      <p class="section-sub" style="margin: 0 auto;">Three tiers built for travel agencies at every stage — from first leads to full market dominance.</p>
+    </div>
+
+    <div class="pkg-grid">
+      <div class="pkg-card">
+        <div class="pkg-card-top">
+          <div class="pkg-card-badge">Package 01</div>
+          <div class="pkg-card-name">Departure</div>
+          <div class="pkg-card-price"><sup>£</sup>997</div>
+          <div class="pkg-card-period">per month + ad spend</div>
+        </div>
+        <div class="pkg-card-body">
+          <ul class="pkg-card-features">
+            <li>Facebook & Instagram ads (2 campaigns)</li>
+            <li>Custom landing page build</li>
+            <li>Lead capture setup</li>
+            <li>Monthly performance report</li>
+            <li>Fortnightly strategy call</li>
+          </ul>
+          <a class="pkg-cta" onclick="showPage('packages')" style="cursor:pointer">View Full Details</a>
+        </div>
+      </div>
+
+      <div class="pkg-card featured">
+        <div class="pkg-card-top">
+          <div class="pkg-card-badge">⭐ Most Popular</div>
+          <div class="pkg-card-name">Altitude</div>
+          <div class="pkg-card-price"><sup>£</sup>2,197</div>
+          <div class="pkg-card-period">per month + ad spend</div>
+        </div>
+        <div class="pkg-card-body">
+          <ul class="pkg-card-features">
+            <li>Up to 5 active ad campaigns</li>
+            <li>AI Voice Agent — calls leads in 5s</li>
+            <li>Email automation sequences</li>
+            <li>12 social posts per month</li>
+            <li>CRM setup & weekly reporting</li>
+          </ul>
+          <a class="pkg-cta featured-cta" onclick="showPage('packages')" style="cursor:pointer">View Full Details</a>
+        </div>
+      </div>
+
+      <div class="pkg-card">
+        <div class="pkg-card-top">
+          <div class="pkg-card-badge">Package 03</div>
+          <div class="pkg-card-name">First Class</div>
+          <div class="pkg-card-price"><sup>£</sup>3,797</div>
+          <div class="pkg-card-period">per month + ad spend</div>
+        </div>
+        <div class="pkg-card-body">
+          <ul class="pkg-card-features">
+            <li>Unlimited campaigns — FB, IG & TikTok</li>
+            <li>Advanced AI Voice Agent + WhatsApp</li>
+            <li>Full social media management</li>
+            <li>Monthly video production</li>
+            <li>Dedicated team of 3</li>
+          </ul>
+          <a class="pkg-cta" onclick="showPage('packages')" style="cursor:pointer">View Full Details</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="guarantee-bar">
+      <div class="guarantee-icon">✦</div>
+      <div>
+        <h3>Our Results Guarantee</h3>
+        <p><strong>20 qualified travel enquiries in your first 60 days — or we work for free until we deliver.</strong> No long-term contracts. No excuses. Just a marketing partner with skin in the game.</p>
+      </div>
+      <a class="btn-primary" onclick="showPage('contact')" style="cursor:pointer; white-space:nowrap; flex-shrink:0;">Book a Call</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">Meridi<span>a</span>n</div>
+        <div class="footer-brand-desc">AI-powered travel marketing agency helping UK travel businesses get more bookings through performance ads and intelligent automation.</div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a onclick="showPage('about')">About Us</a></li>
+          <li><a onclick="showPage('cases')">Case Studies</a></li>
+          <li><a onclick="showPage('blog')">Blog</a></li>
+          <li><a onclick="showPage('contact')">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a onclick="showPage('packages')">Departure — £997</a></li>
+          <li><a onclick="showPage('packages')">Altitude — £2,197</a></li>
+          <li><a onclick="showPage('packages')">First Class — £3,797</a></li>
+          <li><a onclick="showPage('packages')">Add-Ons</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a>Manchester, UK</a></li>
+          <li><a>hello@meridianmedia.co.uk</a></li>
+          <li><a>Book a Discovery Call</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Meridian Media Ltd. All rights reserved.</div>
+      <div class="footer-location">📍 Manchester, United Kingdom</div>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- ABOUT PAGE -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div id="page-about" class="page">
+  <div class="about-hero">
+    <div>
+      <div class="about-hero-tag">About Meridian Media</div>
+      <h1>Built by people who<br><em>know travel.</em></h1>
+      <p>Meridian was founded by a team with real skin in the travel industry. Our co-founder ran a travel agency turning over millions. We've seen first-hand what it's like to lose leads, miss enquiries and watch competitors steal your clients — and we built Meridian to fix it.</p>
+    </div>
+    <div class="about-hero-right">
+      <div class="about-stat-card">
+        <div class="about-stat-num">£0</div>
+        <div class="about-stat-label">wasted on leads that go unanswered — our AI calls every single one</div>
+      </div>
+      <div class="about-stat-card">
+        <div class="about-stat-num">5s</div>
+        <div class="about-stat-label">average response time to every new travel enquiry, 24/7</div>
+      </div>
+      <div class="about-stat-card">
+        <div class="about-stat-num">21×</div>
+        <div class="about-stat-label">higher conversion rate with instant lead response vs hours later</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mission-section">
+    <blockquote>"Most marketing agencies understand advertising. We understand travel — and that makes every campaign we build perform differently."</blockquote>
+    <div class="mission-source">— Meridian Media, Manchester</div>
+  </div>
+
+  <div class="team-section">
+    <div class="section-tag">
+      <div class="section-tag-line"></div>
+      <div class="section-tag-text">The Team</div>
+    </div>
+    <h2 class="section-title">The people behind<br><em>your results</em></h2>
+
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-card-top">
+          <div class="team-avatar">S</div>
+        </div>
+        <div class="team-card-body">
+          <div class="team-name">Saif</div>
+          <div class="team-role">Founder — Strategy & AI</div>
+          <div class="team-bio">Leads agency strategy, AI systems and automation. Expert in no-code development, landing pages and AI-powered marketing infrastructure. Builds the systems that run 24/7 so your agency never misses a lead.</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-card-top">
+          <div class="team-avatar">W</div>
+        </div>
+        <div class="team-card-body">
+          <div class="team-name">Wahab</div>
+          <div class="team-role">Co-Founder — Marketing</div>
+          <div class="team-bio">Brings deep agency experience across paid social, content strategy and brand building. Has successfully scaled marketing programmes for businesses across hospitality and travel. Your campaigns are in safe hands.</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-card-top">
+          <div class="team-avatar">Sh</div>
+        </div>
+        <div class="team-card-body">
+          <div class="team-name">Shaz</div>
+          <div class="team-role">Co-Founder — Sales & Travel</div>
+          <div class="team-bio">Former travel agency owner with millions in sales. Shaz doesn't just understand how to sell travel — he's lived it. Leads client relationships and ensures every campaign is built around what actually converts in travel.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">Meridi<span>a</span>n</div>
+        <div class="footer-brand-desc">AI-powered travel marketing agency helping UK travel businesses get more bookings through performance ads and intelligent automation.</div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a onclick="showPage('about')">About Us</a></li>
+          <li><a onclick="showPage('cases')">Case Studies</a></li>
+          <li><a onclick="showPage('blog')">Blog</a></li>
+          <li><a onclick="showPage('contact')">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a onclick="showPage('packages')">Departure — £997</a></li>
+          <li><a onclick="showPage('packages')">Altitude — £2,197</a></li>
+          <li><a onclick="showPage('packages')">First Class — £3,797</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a>Manchester, UK</a></li>
+          <li><a>hello@meridianmedia.co.uk</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Meridian Media Ltd. All rights reserved.</div>
+      <div class="footer-location">📍 Manchester, United Kingdom</div>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- PACKAGES PAGE -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div id="page-packages" class="page">
+  <div class="packages-hero">
+    <div class="packages-hero-tag">Pricing & Packages</div>
+    <h1>Choose your<br><em>growth plan</em></h1>
+    <p>Three performance-led packages built specifically for UK travel agencies. No fluff — just more enquiries, more bookings, more revenue.</p>
+  </div>
+
+  <div class="packages-full">
+    <div class="packages-full-grid">
+
+      <!-- PKG 1 -->
+      <div class="pkg-full">
+        <div class="pkg-full-header">
+          <div class="pkg-full-num">01 / 03</div>
+          <div class="pkg-full-name">Departure</div>
+          <div class="pkg-full-sub">Your first consistent flow of qualified travel enquiries from paid social.</div>
+          <div class="pkg-full-price">
+            <span class="pkg-full-sym">£</span>
+            <span class="pkg-full-num-price">997</span>
+          </div>
+          <div class="pkg-full-period">per month</div>
+          <div class="pkg-full-adspend">+ ad spend (recommended £200–£500/mo)</div>
+        </div>
+        <div class="pkg-full-body">
+          <div class="pkg-section-label">Paid Social</div>
+          <ul class="pkg-full-features">
+            <li>Facebook & Instagram ads — up to 2 active campaigns</li>
+            <li>Ad creative — copy, graphics & video editing</li>
+            <li>Audience targeting & research setup</li>
+          </ul>
+          <div class="pkg-section-label">Conversion</div>
+          <ul class="pkg-full-features">
+            <li>Custom landing page built for travel enquiries</li>
+            <li>Lead capture & enquiry form setup</li>
+          </ul>
+          <div class="pkg-section-label">Reporting</div>
+          <ul class="pkg-full-features">
+            <li>Monthly performance report</li>
+            <li>Fortnightly strategy call (30 mins)</li>
+          </ul>
+          <a class="pkg-cta" onclick="showPage('contact')" style="cursor:pointer">Book a Discovery Call</a>
+        </div>
+      </div>
+
+      <!-- PKG 2 -->
+      <div class="pkg-full featured">
+        <div class="pkg-full-header">
+          <div class="pkg-full-num">02 / 03 — Most Popular</div>
+          <div class="pkg-full-name">Altitude</div>
+          <div class="pkg-full-sub">Full marketing engine + AI that calls every lead within 5 seconds, day or night.</div>
+          <div class="pkg-full-price">
+            <span class="pkg-full-sym">£</span>
+            <span class="pkg-full-num-price">2,197</span>
+          </div>
+          <div class="pkg-full-period">per month</div>
+          <div class="pkg-full-adspend">+ ad spend (recommended £500–£1,500/mo)</div>
+        </div>
+        <div class="pkg-full-body">
+          <div class="pkg-section-label">Paid Social</div>
+          <ul class="pkg-full-features">
+            <li>Up to 5 active campaigns — cold, warm & retargeting</li>
+            <li>Full funnel strategy — awareness, retargeting & conversion</li>
+            <li>A/B split testing on ads & landing pages</li>
+          </ul>
+          <div class="pkg-section-label">AI & Automation</div>
+          <ul class="pkg-full-features">
+            <li>AI Voice Agent — calls every lead in under 5 seconds, qualifies & books into diary <span class="ai-tag">⚡ AI</span></li>
+            <li>Automated email follow-up sequences for cold leads <span class="ai-tag">⚡ AI</span></li>
+            <li>CRM setup & lead pipeline management</li>
+          </ul>
+          <div class="pkg-section-label">Content</div>
+          <ul class="pkg-full-features">
+            <li>Social media content — 12 posts/month</li>
+          </ul>
+          <div class="pkg-section-label">Reporting</div>
+          <ul class="pkg-full-features">
+            <li>Weekly performance report</li>
+            <li>Dedicated account manager</li>
+            <li>Quarterly strategy review</li>
+          </ul>
+          <a class="pkg-cta featured-cta" onclick="showPage('contact')" style="cursor:pointer">Book a Discovery Call</a>
+        </div>
+      </div>
+
+      <!-- PKG 3 -->
+      <div class="pkg-full">
+        <div class="pkg-full-header">
+          <div class="pkg-full-num">03 / 03</div>
+          <div class="pkg-full-name">First Class</div>
+          <div class="pkg-full-sub">Your fully outsourced marketing department — AI, ads, content, video and total brand dominance.</div>
+          <div class="pkg-full-price">
+            <span class="pkg-full-sym">£</span>
+            <span class="pkg-full-num-price">3,797</span>
+          </div>
+          <div class="pkg-full-period">per month</div>
+          <div class="pkg-full-adspend">+ ad spend (recommended £1,500–£5,000/mo)</div>
+        </div>
+        <div class="pkg-full-body">
+          <div class="pkg-section-label">Paid Social</div>
+          <ul class="pkg-full-features">
+            <li>Unlimited campaigns — Facebook, Instagram & TikTok</li>
+            <li>Google Ads — high-intent search targeting</li>
+          </ul>
+          <div class="pkg-section-label">AI & Automation</div>
+          <ul class="pkg-full-features">
+            <li>Advanced AI Voice Agent — multi-language, handles objections, books 24/7 <span class="ai-tag">⚡ AI</span></li>
+            <li>AI lead scoring & intelligent nurture flows <span class="ai-tag">⚡ AI</span></li>
+            <li>WhatsApp automation — instant replies to DMs <span class="ai-tag">⚡ AI</span></li>
+            <li>Full CRM management & sales pipeline</li>
+          </ul>
+          <div class="pkg-section-label">Content & Brand</div>
+          <ul class="pkg-full-features">
+            <li>Full social media management — 20 posts + daily Stories</li>
+            <li>Monthly video content — Reels & ad creatives</li>
+            <li>Influencer & creator partnerships</li>
+          </ul>
+          <div class="pkg-section-label">Support</div>
+          <ul class="pkg-full-features">
+            <li>Dedicated team of 3 — strategist, creative & account manager</li>
+            <li>Same-day response guarantee</li>
+          </ul>
+          <a class="pkg-cta" onclick="showPage('contact')" style="cursor:pointer">Book a Discovery Call</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="guarantee-bar">
+      <div class="guarantee-icon">✦</div>
+      <div>
+        <h3>Our Results Guarantee</h3>
+        <p><strong>20 qualified travel enquiries in 60 days — or we work for free until we deliver.</strong> No long-term contracts. No excuses. Just results.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add-ons -->
+  <div class="addons-section">
+    <div class="section-tag">
+      <div class="section-tag-line"></div>
+      <div class="section-tag-text">Add-Ons</div>
+    </div>
+    <h2 class="section-title" style="margin-bottom:32px;">Bolt-on <em>extras</em></h2>
+    <div class="addons-grid">
+      <div class="addon-card">
+        <div><div class="addon-name">AI Voice Agent <span class="ai-tag">⚡ AI</span></div><div class="addon-desc">Add the 5-second lead callback to Departure</div></div>
+        <div class="addon-price">£397/mo</div>
+      </div>
+      <div class="addon-card">
+        <div><div class="addon-name">WhatsApp AI <span class="ai-tag">⚡ AI</span></div><div class="addon-desc">Instant automated replies to WhatsApp enquiries</div></div>
+        <div class="addon-price">£297/mo</div>
+      </div>
+      <div class="addon-card">
+        <div><div class="addon-name">Landing Page Build</div><div class="addon-desc">High-converting page built for travel enquiries</div></div>
+        <div class="addon-price">£497</div>
+      </div>
+      <div class="addon-card">
+        <div><div class="addon-name">TikTok Package</div><div class="addon-desc">8 short-form videos/month, scripted & edited</div></div>
+        <div class="addon-price">£597/mo</div>
+      </div>
+      <div class="addon-card">
+        <div><div class="addon-name">Google Ads</div><div class="addon-desc">Search campaigns targeting high-intent travellers</div></div>
+        <div class="addon-price">£497/mo</div>
+      </div>
+      <div class="addon-card">
+        <div><div class="addon-name">Email Nurture Setup</div><div class="addon-desc">Automated sequence converting cold leads to bookings</div></div>
+        <div class="addon-price">£297</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">Meridi<span>a</span>n</div>
+        <div class="footer-brand-desc">AI-powered travel marketing for UK travel agencies.</div>
+      </div>
+      <div class="footer-col"><h4>Pages</h4><ul>
+        <li><a onclick="showPage('home')">Home</a></li>
+        <li><a onclick="showPage('about')">About</a></li>
+        <li><a onclick="showPage('cases')">Case Studies</a></li>
+        <li><a onclick="showPage('contact')">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul>
+        <li><a>Manchester, UK</a></li>
+        <li><a>hello@meridianmedia.co.uk</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Meridian Media Ltd.</div>
+      <div class="footer-location">📍 Manchester</div>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- CASE STUDIES PAGE -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div id="page-cases" class="page">
+  <div class="cases-hero">
+    <div class="cases-tag">Case Studies & Results</div>
+    <h1>Real agencies.<br><em>Real results.</em></h1>
+    <p>See how we've helped UK travel businesses transform their lead generation and booking rates with AI-powered marketing.</p>
+  </div>
+
+  <div class="cases-section">
+
+    <div class="case-card">
+      <div class="case-card-inner">
+        <div class="case-card-left">
+          <div class="case-niche">Specialist Tour Operator</div>
+          <div class="case-name">Luxury Escapes Travel</div>
+          <div class="case-desc">A Manchester-based luxury tour operator struggling with inconsistent lead flow and slow follow-up times. Missing enquiries that came in outside of business hours.</div>
+          <div class="case-pkg-tag">Altitude Package</div>
+        </div>
+        <div class="case-card-right">
+          <div class="case-results">
+            <div>
+              <div class="case-result-num">67</div>
+              <div class="case-result-label">qualified leads in first 60 days</div>
+            </div>
+            <div>
+              <div class="case-result-num">£0</div>
+              <div class="case-result-label">missed enquiries since AI voice agent deployed</div>
+            </div>
+            <div>
+              <div class="case-result-num">£31k</div>
+              <div class="case-result-label">in new bookings within 90 days</div>
+            </div>
+          </div>
+          <div class="case-testimonial">
+            <p>"We were losing leads every weekend because no one was available to call back. Meridian's AI calls them before I've even seen the notification — it's genuinely changed our business."</p>
+            <div class="case-testimonial-author">— Director, Luxury Escapes Travel</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="coming-soon-banner">
+      <h3>More case studies coming soon</h3>
+      <p>We're actively documenting results from our growing client base. Check back in 60 days — or better yet, become one of our next success stories.</p>
+      <a class="btn-primary" onclick="showPage('contact')" style="cursor:pointer">Work With Us</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">Meridi<span>a</span>n</div>
+        <div class="footer-brand-desc">AI-powered travel marketing for UK travel agencies.</div>
+      </div>
+      <div class="footer-col"><h4>Pages</h4><ul>
+        <li><a onclick="showPage('home')">Home</a></li>
+        <li><a onclick="showPage('about')">About</a></li>
+        <li><a onclick="showPage('packages')">Packages</a></li>
+        <li><a onclick="showPage('contact')">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul>
+        <li><a>Manchester, UK</a></li>
+        <li><a>hello@meridianmedia.co.uk</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Meridian Media Ltd.</div>
+      <div class="footer-location">📍 Manchester</div>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- BLOG PAGE -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div id="page-blog" class="page">
+  <div class="blog-section">
+    <div class="section-tag">
+      <div class="section-tag-line"></div>
+      <div class="section-tag-text">Insights & Resources</div>
+    </div>
+    <h2 class="section-title">Travel marketing<br><em>insights</em></h2>
+    <p class="section-sub">Practical advice for UK travel agencies on paid social, AI automation, lead generation and booking conversion.</p>
+
+    <div class="blog-grid">
+      <div class="blog-card">
+        <div class="blog-card-img">✈️</div>
+        <div class="blog-card-body">
+          <div class="blog-cat">AI & Automation</div>
+          <div class="blog-title">Why 48% of UK Travel Enquiries Go Unanswered — And How AI Fixes It</div>
+          <div class="blog-excerpt">The average travel agency takes 4+ hours to respond to a new lead. By then, they've booked with a competitor. Here's how AI voice agents are changing the game.</div>
+          <div class="blog-meta">
+            <span>April 2026</span>
+            <span class="blog-meta-dot"></span>
+            <span>5 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-card-img">📱</div>
+        <div class="blog-card-body">
+          <div class="blog-cat">Paid Social</div>
+          <div class="blog-title">The Facebook Ad Formula That's Booking Holidays for UK Travel Agencies in 2026</div>
+          <div class="blog-excerpt">80% of travellers use social media before booking. This is the exact ad structure we use to turn scrollers into enquiries — with real examples and copy breakdowns.</div>
+          <div class="blog-meta">
+            <span>March 2026</span>
+            <span class="blog-meta-dot"></span>
+            <span>7 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-card-img">🎯</div>
+        <div class="blog-card-body">
+          <div class="blog-cat">Lead Generation</div>
+          <div class="blog-title">5 Reasons Your Travel Agency Ads Aren't Converting (And Exactly How to Fix Them)</div>
+          <div class="blog-excerpt">Most travel agencies are making the same 5 mistakes with their paid ads. Here's a no-nonsense breakdown of what's going wrong and the exact changes that fix it.</div>
+          <div class="blog-meta">
+            <span>March 2026</span>
+            <span class="blog-meta-dot"></span>
+            <span>6 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-card-img">🌍</div>
+        <div class="blog-card-body">
+          <div class="blog-cat">Industry Trends</div>
+          <div class="blog-title">Travel Marketing Trends in the UK for 2026: What Agencies Need to Know Now</div>
+          <div class="blog-excerpt">From event-based travel packages to climate-driven destination shifts — the trends shaping where travellers are spending in 2026 and how to market to them effectively.</div>
+          <div class="blog-meta">
+            <span>February 2026</span>
+            <span class="blog-meta-dot"></span>
+            <span>8 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-card-img">📧</div>
+        <div class="blog-card-body">
+          <div class="blog-cat">Email Marketing</div>
+          <div class="blog-title">The 5-Email Sequence That Turns Cold Travel Leads Into Confirmed Bookings</div>
+          <div class="blog-excerpt">Most travel agencies give up on a lead after one follow-up. This 5-email sequence keeps you front of mind until they're ready to book — and it runs completely on autopilot.</div>
+          <div class="blog-meta">
+            <span>February 2026</span>
+            <span class="blog-meta-dot"></span>
+            <span>5 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-card-img">💰</div>
+        <div class="blog-card-body">
+          <div class="blog-cat">Agency Growth</div>
+          <div class="blog-title">How to Choose the Right Marketing Package for Your Travel Agency's Stage of Growth</div>
+          <div class="blog-excerpt">Not every travel agency needs the same level of marketing support. This guide helps you figure out exactly which package makes sense for where your business is right now.</div>
+          <div class="blog-meta">
+            <span>January 2026</span>
+            <span class="blog-meta-dot"></span>
+            <span>4 min read</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">Meridi<span>a</span>n</div>
+        <div class="footer-brand-desc">AI-powered travel marketing for UK travel agencies.</div>
+      </div>
+      <div class="footer-col"><h4>Pages</h4><ul>
+        <li><a onclick="showPage('home')">Home</a></li>
+        <li><a onclick="showPage('about')">About</a></li>
+        <li><a onclick="showPage('packages')">Packages</a></li>
+        <li><a onclick="showPage('contact')">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul>
+        <li><a>Manchester, UK</a></li>
+        <li><a>hello@meridianmedia.co.uk</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Meridian Media Ltd.</div>
+      <div class="footer-location">📍 Manchester</div>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- CONTACT PAGE -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div id="page-contact" class="page">
+  <div class="contact-page">
+    <div class="contact-left">
+      <h1>Let's talk about<br><em>your agency</em></h1>
+      <p>Book a free 30-minute discovery call. We'll look at your current setup, identify where leads are being lost and show you exactly what a Meridian campaign would look like for your business.</p>
+
+      <div class="contact-detail">
+        <div class="contact-detail-icon">📍</div>
+        <div>
+          <div class="contact-detail-label">Location</div>
+          <div class="contact-detail-value">Manchester, United Kingdom</div>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">✉️</div>
+        <div>
+          <div class="contact-detail-label">Email</div>
+          <div class="contact-detail-value">hello@meridianmedia.co.uk</div>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">📞</div>
+        <div>
+          <div class="contact-detail-label">Phone</div>
+          <div class="contact-detail-value">To be confirmed</div>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">🕐</div>
+        <div>
+          <div class="contact-detail-label">Response Time</div>
+          <div class="contact-detail-value">Within 24 hours — usually same day</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-right">
+      <h2>Book a Discovery Call</h2>
+      <p>Tell us a bit about your travel business and we'll be in touch to arrange a call within 24 hours.</p>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" placeholder="John">
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="Smith">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Business Name</label>
+        <input type="text" placeholder="Your Travel Agency Ltd">
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="john@yourtravelagency.co.uk">
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" placeholder="07700 000000">
+      </div>
+      <div class="form-group">
+        <label>Which package interests you?</label>
+        <select>
+          <option value="">Select a package...</option>
+          <option>Departure — £997/mo</option>
+          <option>Altitude — £2,197/mo</option>
+          <option>First Class — £3,797/mo</option>
+          <option>Not sure yet — need advice</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Tell us about your agency</label>
+        <textarea placeholder="What type of travel do you specialise in? How many enquiries do you get per month? What's your biggest challenge right now?"></textarea>
+      </div>
+      <button class="form-submit">Request Discovery Call →</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function showPage(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
