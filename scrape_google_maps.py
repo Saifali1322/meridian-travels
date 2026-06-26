@@ -60,15 +60,35 @@ def run_scraper(search_query):
     return items_resp.json()
 
 
+NO_REAL_WEBSITE_PATTERNS = [
+    "google.com/maps",
+    "facebook.com",
+    "instagram.com",
+    "tiktok.com",
+    "twitter.com",
+    "business.site",
+    "booksy.com",
+    "fresha.com",
+    "setmore.com",
+    "nearcut.com",
+    "6map.top",
+]
+
+
+def has_real_website(url):
+    if not url:
+        return False
+    url_lower = url.lower()
+    return not any(pattern in url_lower for pattern in NO_REAL_WEBSITE_PATTERNS)
+
+
 def extract_fields(items, category):
-    """Extract relevant fields from raw Apify results."""
     rows = []
     for item in items:
         website = item.get("website") or item.get("url") or None
         website_display = website if website else "None"
 
-        # Flag as PRIORITY if no website
-        priority = "" if website else "PRIORITY"
+        priority = "" if has_real_website(website) else "PRIORITY"
 
         rows.append({
             "Business Name": item.get("title") or item.get("name", "N/A"),
